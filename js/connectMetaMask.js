@@ -1,11 +1,11 @@
 const provider = window.ethereum;
 const BinanceSmartChainId = '0x38';
-const tokenAddress = '0x6c015277b0f9b8c24b20bd8bbbd29fdb25738a69';
-const tokenSymbol = 'WNYC';
-const tokenDecimals = 18;
+const tokenAddress = '0x23f07a1c03e7c6d0c88e0e05e79b6e3511073fd5';
+const tokenSymbol = 'CDS';
+const tokenDecimals = 8;
 const tokenImage = 'https://i.imgur.com/J53IJI7.png';
 
-/** Connect to Wrapped NewYorkCoin */
+/** Connect to Crypto Development Services */
 const setupBinanceSmartChain = async () => {
   /** In case we need to throw an error, let's grab the error modal & error message */
   const errorModalContainer = document.querySelector('.error-modal-container');
@@ -72,7 +72,7 @@ const connectMetaMaskNav = document.querySelector('.connectMetaMask-nav');
 //   setupBinanceSmartChain();
 // });
 //  }
-/** If we are already connected to Wrapped NewYorkCoin, show disbled button with 'Connected' text */
+/** If we are already connected to Crypto Development Services, show disbled button with 'Connected' text */
 const connectButtons = [connectMetaMask/*, connectMetaMaskNav*/];
 const displayConnectedButton = async () => {
   const accounts = await ethereum.request({ method: 'eth_accounts' });
@@ -99,7 +99,7 @@ const isConnectedToBinanceSmartChain = async () => {
 };
 
 if (provider) {
-  /** Check if user is connected to Wrapped NewYorkCoin and display correct button text */
+  /** Check if user is connected to Crypto Development Services and display correct button text */
   isConnectedToBinanceSmartChain();
 
   /** Reload the page if the chain changes */
