@@ -1,45 +1,45 @@
-const provider = window.ethereum;
-const BinanceSmartChainId = '0x38';
-const tokenAddress = '0x23f07a1c03e7c6d0c88e0e05e79b6e3511073fd5';
-const tokenSymbol = 'CDS';
-const tokenDecimals = 8;
-const tokenImage = 'https://i.imgur.com/J53IJI7.png';
+const provider2 = window.ethereum;
+const AvalancheChainId = '0xa86a';
+const tokenAddress2 = '0x23f07a1c03e7c6d0c88e0e05e79b6e3511073fd5';
+const tokenSymbol2 = 'CDS';
+const tokenDecimals2 = 8;
+const tokenImage2 = 'https://i.imgur.com/ZXf2SKw.png';
 
-/** Connect to Crypto Development Services */
-const setupBinanceSmartChain = async () => {
+/** Connect to Crypto Development Services and the BSC mainnet network */
+const setupAvalancheChain = async () => {
   /** In case we need to throw an error, let's grab the error modal & error message */
   const errorModalContainer = document.querySelector('.error-modal-container');
   const errorMessage = document.querySelector('.error-message');
 
-  if (provider) {
+  if (provider2) {
     try {
-      await provider.request({ method: 'eth_requestAccounts' });
-      await provider.request({
+      await provider2.request({ method: 'eth_requestAccounts' });
+      await provider2.request({
         method: 'wallet_addEthereumChain',
         params: [
           {
-            chainId: BinanceSmartChainId,
-            chainName: 'Binance Smart Chain - Mainnet',
+            chainId: AvalancheChainId,
+            chainName: 'Avalanche - Mainnet',
             nativeCurrency: {
-              name: 'Binance coin (Smart chain)',
+              name: 'Avalanche',
               symbol: 'BNB',
               decimals: 18,
             },
-            rpcUrls: ['https://speedy-nodes-nyc.moralis.io/dd74f0e2844dca14fad48024/bsc/mainnet'],
+            rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
             blockExplorerUrls: [
-              'https://bscscan.com/',
+              'https://snowtrace.io/',
             ],
           },
         ],
       });
-      await provider.request({ method: 'wallet_watchAsset',
+      await provider2.request({ method: 'wallet_watchAsset',
       params: {
         type: 'ERC20', // Initially only supports ERC20, but eventually more!
         options: {
-          address: tokenAddress, // The address that the token is at.
-          symbol: tokenSymbol, // A ticker symbol or shorthand, up to 5 chars.
-          decimals: tokenDecimals, // The number of decimals in the token
-          image: tokenImage, // A string url of the token logo
+          address: tokenAddress2, // The address that the token is at.
+          symbol: tokenSymbol2, // A ticker symbol or shorthand, up to 5 chars.
+          decimals: tokenDecimals2, // The number of decimals in the token
+          image: tokenImage2, // A string url of the token logo
         },
       },
      })
@@ -57,26 +57,26 @@ const setupBinanceSmartChain = async () => {
 };
 
 /**  Add event listener to the Connect MetaMask buttons */
-const connectMetaMask = document.querySelector('.connectMetaMask');
-const connectMetaMaskNav = document.querySelector('.connectMetaMask-nav');
+const connectMetaMaskavax = document.querySelector('.connectMetaMaskavax');
+const connectMetaMaskNav2 = document.querySelector('.connectMetaMask-nav');
 
 // If user is not on Integrate MetaMask page, connectMetaMask will not be available so
 // we need to check if it's there before adding the event listener to it
- if (connectMetaMask) {
-  connectMetaMask.addEventListener('click', () => {
-    setupBinanceSmartChain();
+ if (connectMetaMaskavax) {
+  connectMetaMaskavax.addEventListener('click', () => {
+    setupAvalancheChain();
   });
 }
 //  } if (connectMetaMask) {
-// connectMetaMaskNav.addEventListener('click', () => {
-//   setupBinanceSmartChain();
+// connectMetaMaskNav2.addEventListener('click', () => {
+//   setupAvalancheChain();
 // });
 //  }
 /** If we are already connected to Crypto Development Services, show disbled button with 'Connected' text */
-const connectButtons = [connectMetaMask/*, connectMetaMaskNav*/];
-const displayConnectedButton = async () => {
+const connectButtonsavax = [connectMetaMaskavax/*, connectMetaMaskNav2*/];
+const displayConnectedButton2 = async () => {
   const accounts = await ethereum.request({ method: 'eth_accounts' });
-  connectButtons.forEach((button) => {
+  connectButtonsavax.forEach((button) => {
     if (button && accounts.length > 0) {
       const shortenedAccount = `${accounts[0].slice(
         0,
@@ -89,31 +89,31 @@ const displayConnectedButton = async () => {
   });
 };
 
-const isConnectedToBinanceSmartChain = async () => {
-  const chainId = await provider.request({
+const isConnectedToAvalancheChain = async () => {
+  const chainId = await provider2.request({
     method: 'eth_chainId',
   });
-  if (chainId === BinanceSmartChainId) {
-    displayConnectedButton();
+  if (chainId === AvalancheChainId) {
+    displayConnectedButton2();
   }
 };
 
-if (provider) {
-  /** Check if user is connected to Crypto Development Services and display correct button text */
-  isConnectedToBinanceSmartChain();
+if (provider2) {
+  /** Check if user is connected to Wrapped NewYorkCoin and display correct button text */
+  isConnectedToAvalancheChain();
 
   /** Reload the page if the chain changes */
-  provider.on('chainChanged', () => {
+  provider2.on('chainChanged', () => {
     // MetaMask recommends reloading the page unless we have good reason not to
-    // Plus, everytime the window reloads, we call isConnectedToBinanceSmartChain again
+    // Plus, everytime the window reloads, we call isConnectedToAvalancheChain again
     // and can show the correct 'Connected' or 'Connect MetaMask' button text
     window.location.reload();
   });
 
   /** When the account changes update the button text */
-  provider.on('accountsChanged', (accounts) => {
+  provider2.on('accountsChanged', (accounts) => {
     if (accounts.length > 0) {
-      displayConnectedButton();
+      displayConnectedButton2();
     } else {
       window.location.reload();
     }
