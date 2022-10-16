@@ -25,7 +25,7 @@ const setupBinanceSmartChain = async () => {
               symbol: 'BNB',
               decimals: 18,
             },
-            rpcUrls: ['https://speedy-nodes-nyc.moralis.io/dd74f0e2844dca14fad48024/bsc/mainnet'],
+            rpcUrls: ['https://bsc-dataseed1.binance.org/'],
             blockExplorerUrls: [
               'https://bscscan.com/',
             ],
