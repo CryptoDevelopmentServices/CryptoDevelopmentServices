@@ -22,7 +22,7 @@ const setupAvalancheChain = async () => {
             chainName: 'Avalanche - Mainnet',
             nativeCurrency: {
               name: 'Avalanche',
-              symbol: 'BNB',
+              symbol: 'AVAX',
               decimals: 18,
             },
             rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
