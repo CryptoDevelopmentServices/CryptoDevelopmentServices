@@ -18,32 +18,38 @@ body.night {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Navigation Bar Styles */
-nav {
-    background-color: #333;
-    padding: 1rem;
+/* Navbar styles */
+.navbar {
+    background-color: #333; /* Same as footer color */
     color: white;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Space between the left and right sections */
+    align-items: center; /* Vertically center the items */
 }
 
-nav ul {
+.navbar ul {
     list-style: none;
     display: flex;
 }
 
-nav li {
+.navbar li {
     margin-right: 20px;
 }
 
-nav a {
+.navbar a {
     text-decoration: none;
     color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.navbar a:hover {
+    color: #ffcc00; /* Hover color for navbar links */
 }
 
 button#mode-toggle {
@@ -60,13 +66,87 @@ button#mode-toggle:hover {
     color: #ffcc00;
 }
 
-/* Section Styles */
+/* Main content section */
 section {
-    padding: 2rem;
+    padding: 80px 20px 20px; /* Add top padding to avoid overlap with navbar */
     text-align: center;
 }
 
 h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333; /* Same as navbar color */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ffcc00; /* Change this color to match your design */
+}
+
+/* Optional: Make footer responsive */
+@media (max-width: 768px) {
+    footer .footer-content {
+        padding: 0 10px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+
+    .social-icon {
+        font-size: 18px;
+        margin: 0 8px;
+    }
+}
+
+/* Optional: Make navbar responsive */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
+
+    button#mode-toggle {
+        font-size: 20px;
+    }
 }

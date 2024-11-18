@@ -7,17 +7,19 @@
     <title>Crypto Development Services</title>
     <!-- Link to the CSS file in the css folder -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Optionally, you can use a CDN for font-awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="day">
 
     <!-- Navigation Bar -->
-    <nav>
+    <nav class="navbar">
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <button id="mode-toggle">🌙</button>
+        <button id="mode-toggle">🌙</button> <!-- Dark Mode Button -->
     </nav>
 
     <!-- Main Content -->
@@ -25,6 +27,27 @@
         <h1>Welcome to My Website</h1>
         <p>This is an example website with a day/night mode toggle.</p>
     </section>
+
+    <!-- Footer with Social Media Links -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy;2021 - 2024 Crypto Development Services. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://discord.gg/vrvfhQ4FRa" target="_blank" class="social-icon">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.reddit.com/r/CryptoDevelopment_CDS/" target="_blank" class="social-icon">
+                    <i class="fab fa-reddit"></i>
+                </a>
+                <a href="https://github.com/CryptoDevelopmentServices" target="_blank" class="social-icon">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
     <!-- Link to the JavaScript file in the js folder -->
     <script src="js/darkmode_toggle.js"></script>
