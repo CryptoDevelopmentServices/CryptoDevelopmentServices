@@ -1,0 +1,20 @@
+/* slick-carousel.css */
+.slick-slide {
+    display: block;
+    text-align: center;
+    background-color: #fff;
+}
+
+.slick-dots li button:before {
+    color: #fff;  /* You can adjust dot color */
+}
+.slick-prev,
+.slick-next {
+    color: white;  /* Adjust the arrows' color */
+}
+
+.slick-slide img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}

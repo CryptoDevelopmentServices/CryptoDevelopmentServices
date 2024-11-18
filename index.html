@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crypto Development Services</title>
-    <!-- Link to the CSS file in the css folder -->
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Optionally, you can use a CDN for font-awesome icons -->
+    <link rel="stylesheet" href="css/slick-carousel.css">
+    <link rel="stylesheet" href="css/particles.css"> <!-- Custom Particles.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Particle.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body class="day">
 
@@ -24,8 +26,54 @@
 
     <!-- Main Content -->
     <section>
-        <h1>Welcome to My Website</h1>
+        <h1>Crypto Development Services</h1>
         <p>This is an example website with a day/night mode toggle.</p>
+    </section>
+
+    <!-- Particle and Carousel Section -->
+    <section class="section bg-gray-800" style="overflow: hidden; position: relative;">
+        <!-- Globe Canvas -->
+        <canvas id="globe" style="position: absolute; top: 0; left: 0;" width="200" height="720"></canvas>
+        
+        <!-- Particles Background -->
+        <div id="particles-js" class="particles-js-outer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+
+        <!-- Slick Carousel Section -->
+        <div class="slick-group-slider particles-js-outer bg-gray-700">
+            <div class="carousel-parent-outer">
+                <div class="carousel-parent">
+                    <div class="slick-slider">
+                        <div class="slick-slide">
+                            <div class="slick-slide-caption">
+                                <h6>Your #1 retail currency</h6>
+                                <h1>Crypto Currency</h1>
+                                <h3 class="decoration-heading-1">That will Change the World</h3>
+                                <p><strong>Crypto Development Services</strong> is starting to completely change the way transactions are made in retail. CDS offers fast and reliable merchant payment solution.</p>
+                                <div class="slick-slide-caption__footer"><a class="button button-color-1" href="about.html">Read More</a></div>
+                            </div>
+                        </div>
+                        <div class="slick-slide">
+                            <div class="slick-slide-caption">
+                                <h6>The perfect retail payment solution</h6>
+                                <h1>Super Fast</h1>
+                                <h3 class="decoration-heading-1">Worldwide Transactions</h3>
+                                <p>A lightning fast cryptocurrency with worldwide retail acceptance. Crypto Development Services is faster than Bitcoin and litecoin.</p>
+                                <div class="slick-slide-caption__footer"><a class="button button-color-1" href="about.html">Read More</a></div>
+                            </div>
+                        </div>
+                        <div class="slick-slide">
+                            <div class="slick-slide-caption">
+                                <h6>Worldwide Usage</h6>
+                                <h1>Decentralized</h1>
+                                <h3 class="decoration-heading-1">Blockchain Technology</h3>
+                                <p>Crypto Development Services offers its users a decentralized, anonymous and secure worldwide network easily accessible using a wide array of wallets on multiple operating systems.</p>
+                                <div class="slick-slide-caption__footer"><a class="button button-color-1" href="about.html">Read More</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer with Social Media Links -->
@@ -49,7 +97,10 @@
         </div>
     </footer>
 
-    <!-- Link to the JavaScript file in the js folder -->
+    <!-- Link to JS files -->
     <script src="js/darkmode_toggle.js"></script>
+    <script src="js/slick-carousel.js"></script> <!-- Slick Carousel Initialization -->
+    <script src="js/particles.js"></script> <!-- Particles.js Config -->
+
 </body>
 </html>
