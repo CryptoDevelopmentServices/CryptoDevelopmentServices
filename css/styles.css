@@ -104,15 +104,32 @@ footer p {
 }
 
 .social-icon {
-    color: white;
     font-size: 20px;
     margin: 0 10px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
+/* Specific icon colors */
+.social-icon.discord {
+    color: #7289DA; /* Discord Blue */
+}
+
+.social-icon.twitter {
+    color: #1DA1F2; /* Twitter Blue */
+}
+
+.social-icon.reddit {
+    color: #FF4500; /* Reddit Orange */
+}
+
+.social-icon.github {
+    color: #181717; /* GitHub Black */
+}
+
+/* Hover effects for social icons */
 .social-icon:hover {
-    color: #ffcc00; /* Change this color to match your design */
+    opacity: 0.8; /* Slight fade effect on hover */
 }
 
 /* Optional: Make footer responsive */
