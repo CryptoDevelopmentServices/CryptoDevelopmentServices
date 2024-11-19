@@ -18,7 +18,7 @@ $(document).ready(function(){
 
 
     // Optional: If you want to do any custom behavior when a slide changes
-    $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-        console.log('Before slide change: ', currentSlide, nextSlide);
-    });
+    // $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    //     console.log('Before slide change: ', currentSlide, nextSlide);
+    // });
 });
