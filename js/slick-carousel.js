@@ -3,15 +3,17 @@
 $(document).ready(function() {
     // Initialize Slick Carousel
     $('.slick-slider').slick({
-        arrows: false,       // Disable arrows (unless you want them)
-        loop: true,          // Enable looping
-        dots: true,          // Show navigation dots
+        arrows: true,        // Enable arrows for manual navigation
+        loop: true,          // Enable infinite loop
+        dots: false,         // Disable dots (optional)
         autoplay: true,      // Enable autoplay
-        fade: true,          // Use fade transition
-        speed: 1000,         // Transition speed
+        slidesToShow: 1,     // Show one slide at a time
+        slidesToScroll: 1,   // Scroll one slide at a time
         autoplaySpeed: 3000, // Delay between slides
+        speed: 1000,         // Transition speed
+        easing: 'ease',      // Easing effect (optional)
         pauseOnHover: true,  // Pause on hover
-        pauseOnFocus: true,  // Pause on focus (for accessibility)
+        pauseOnFocus: true,  // Pause on focus
     });
 
     // Optional: If you want to do any custom behavior when a slide changes
