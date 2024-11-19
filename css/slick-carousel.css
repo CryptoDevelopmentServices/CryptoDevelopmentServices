@@ -6,7 +6,7 @@
 
 .slick-slider {
     width: 100%;
-    height: 100%;
+    height: 100%; /* Ensure the carousel takes up full height */
     margin: 0 auto;
 }
 
@@ -18,89 +18,45 @@
     height: 100%;
 }
 
+/* Semi-transparent black background */
 .slick-slide-caption {
     text-align: center;
     color: #fff;
     padding: 30px;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    background-color: rgba(0, 0, 0, 0.5); /* Keep this for transparency */
     border-radius: 10px;
     position: relative;
     z-index: 1;
 }
 
-/* Styling for headers inside the caption */
-.slick-slide-caption h6 {
-    font-size: 18px;
-    font-weight: 700;
-    margin: 10px 0;
-    text-transform: uppercase;
+/* Make sure captions don't overflow */
+.slick-slide-caption h6, .slick-slide-caption h1, .slick-slide-caption h3, .slick-slide-caption p {
+    overflow: hidden; /* Prevent text overflow */
+    text-overflow: ellipsis;
 }
 
-.slick-slide-caption h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.slick-slide-caption h3 {
-    font-size: 24px;
-    margin: 10px 0;
-    font-weight: 300;
-}
-
-/* The paragraph inside caption */
-.slick-slide-caption p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 20px 0;
-}
-
-/* Styling for the footer (button) */
-.slick-slide-caption__footer a.button {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #00bcd4; /* Example button color */
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: background-color 0.3s;
-}
-
-.slick-slide-caption__footer a.button:hover {
-    background-color: #00796b; /* Darker hover state */
-}
-
-/* Optional: Add a background color to the slider container */
+/* Add extra styling for slider container */
 .slick-group-slider.bg-gray-700 {
     background-color: #1a1a1a;
 }
 
-/* Optional: Add a background color for the particles */
+/* Particles background */
 .particles-js-outer {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Ensure it's behind the content */
+    z-index: -1; /* Ensure it's behind the carousel content */
 }
 
-/* Adjust carousel size to take up the full height */
 section.bg-gray-800 {
     height: 100vh; /* Full height */
     position: relative;
     overflow: hidden;
 }
 
-.carousel-parent {
-    position: relative;
-    z-index: 1;
-}
-
-.carousel-parent-outer {
+.carousel-parent, .carousel-parent-outer {
     position: relative;
     z-index: 1;
 }
