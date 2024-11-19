@@ -66,3 +66,77 @@ section.bg-gray-800 {
     position: relative;
     z-index: 1;
 }
+
+/* Navigation arrows */
+.slick-prev, .slick-next {
+    font-size: 24px; /* Adjust the size of the arrows */
+    color: #fff; /* Make arrows white */
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+}
+
+.slick-prev {
+    left: 10px; /* Position left arrow */
+}
+
+.slick-next {
+    right: 10px; /* Position right arrow */
+}
+
+/* Dots navigation */
+.slick-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.slick-dots li button {
+    font-size: 0;
+    background: transparent;
+    border: none;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #fff; /* Highlight active dot */
+}
+
+/* Slick slide styles */
+.slick-slide {
+    position: relative;
+    display: block;
+    width: 100%;    /* Full width of the container */
+    height: 100%;   /* Full height of the container */
+    min-width: 100%;  /* Ensures one slide is visible at a time */
+}
+
+/* Caption styles */
+.slick-slide-caption {
+    position: absolute; /* Positioned relative to the slide */
+    top: 50%;           /* Vertically center */
+    left: 50%;          /* Horizontally center */
+    transform: translate(-50%, -50%); /* Adjust position */
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 10;  /* Ensure captions are above the background */
+}
+
+.slick-slide-caption h6,
+.slick-slide-caption h1,
+.slick-slide-caption h3,
+.slick-slide-caption p {
+    margin: 0;  /* Ensure no margins around text */
+    padding: 5px 0;  /* Add some padding for spacing */
+}
+
+/* Optional: Set minimum width for each slide */
+.slick-slide {
+    min-width: 100%; /* Ensures one slide is visible at a time */
+}
+
