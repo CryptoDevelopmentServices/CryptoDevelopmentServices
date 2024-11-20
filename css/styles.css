@@ -300,3 +300,369 @@ footer p {
         font-size: 20px;
     }
 }
+
+/* list wrap (no horizontal inline display) */
+.list-wrap {
+    border: 0.1px solid transparent;
+}
+
+/* Adjust vertical spacing for various list sizes */
+.list > li + li {
+    margin-top: 10px; /* Vertical spacing */
+}
+
+.list-xs > li + li {
+    margin-top: 3px;
+}
+
+.list-sm > li + li {
+    margin-top: 10px;
+}
+
+.list-md > li + li {
+    margin-top: 18px;
+}
+
+.list-lg > li + li {
+    margin-top: 25px;
+}
+
+.list-xl > li + li {
+    margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+    .list-xl > li + li {
+        margin-top: 60px;
+    }
+}
+
+/* Remove inline block display for vertical layout */
+.list-inline > li {
+    display: block; /* Change inline-block to block for vertical display */
+    margin-bottom: 10px; /* Optional, add spacing between items */
+}
+
+/* Optional: adjust the margin and padding on the list items for small screens */
+html .list-inline-xs {
+    transform: none; /* Remove transform for a cleaner vertical layout */
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+html .list-inline-xs > * {
+    margin-top: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+html .list-inline-sm {
+    transform: none;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+html .list-inline-sm > * {
+    margin-top: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/* .list-terms adjustments */
+.list-terms dt + dd {
+    margin-top: 10px;
+}
+
+.list-terms dd + dt {
+    margin-top: 25px;
+}
+
+@media (min-width: 768px) {
+    .list-terms dt + dd {
+        margin-top: 18px;
+    }
+    .list-terms dd + dt {
+        margin-top: 38px;
+    }
+}
+
+* + .list-terms {
+    margin-top: 25px;
+}
+
+/* Styled indexed list */
+.index-list {
+    counter-reset: li;
+}
+
+.index-list > li .list-index-counter:before {
+    content: counter(li, decimal-leading-zero);
+    counter-increment: li;
+}
+
+/* Marked list for vertical layout */
+.list-marked {
+    padding-left: 25px;
+    text-align: left;
+}
+
+.list-marked > li {
+    text-indent: -25px;
+    padding-left: 25px;
+}
+
+.list-marked > li::before {
+    position: relative;
+    display: inline-block;
+    left: 25px;
+    top: -1px;
+    min-width: 25px;
+    content: '\f105';
+    font: 400 14px/24px 'FontAwesome';
+    color: #0f75bc;
+}
+
+.list-marked > li + li {
+    margin-top: 4px;
+}
+
+* + .list-marked {
+    margin-top: 15px;
+}
+
+p + .list-marked {
+    margin-top: 10px;
+}
+
+/* Ordered list vertical display */
+.list-ordered {
+    counter-reset: li;
+    padding-left: 25px;
+    text-align: left;
+}
+
+.list-ordered > li {
+    position: relative;
+    padding-left: 25px;
+}
+
+.list-ordered > li:before {
+    content: counter(li, decimal) ".";
+    counter-increment: li;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 15px;
+    color: #0f75bc;
+    font-weight: 500;
+}
+
+.list-ordered > li + li {
+    margin-top: 10px;
+}
+
+* + .list-ordered {
+    margin-top: 15px;
+}
+
+/* List steps (turn vertical) */
+.list-steps {
+    text-align: left; /* Change to left for better readability */
+    counter-reset: list-steps-item;
+}
+
+.list-steps__item p {
+    letter-spacing: .05em;
+}
+
+.list-steps__item * + p {
+    margin-top: 20px;
+}
+
+.list-steps__item:hover .list-steps__item-divider {
+    box-shadow: 0 0 10px 1px rgba(227, 164, 50, 0.2);
+}
+
+.list-steps__item-counter::before {
+    content: counter(list-steps-item, decimal-leading-zero);
+    counter-increment: list-steps-item;
+    font: 100 40px "Titillium Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1;
+    color: rgba(21, 21, 21, 0.3);
+    vertical-align: bottom;
+}
+
+.list-steps__item-divider {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30px;
+    height: 30px;
+    background: #0f75bc;
+    border-radius: 50%;
+    border: 7px solid #d4d6dd;
+    transition: .2s;
+}
+
+.list-steps__item-main {
+    position: relative;
+    padding-top: 20px;
+}
+
+.list-steps__item-main::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -35px;
+    border-bottom: 1px solid #ebebeb;
+    width: calc(100% + 35px);
+    pointer-events: none;
+}
+
+.list-steps__item {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.list-steps__item:first-child .list-steps__item-main::before {
+    right: 0;
+    left: auto;
+    width: 100vw;
+}
+
+.list-steps__item:last-child .list-steps__item-main::before {
+    width: 100vw;
+}
+
+* + .list-steps {
+    margin-top: 30px;
+}
+
+* + .list-steps__item-divider {
+    margin-top: 18px;
+}
+
+.list-steps__item + .list-steps__item {
+    margin-top: 25px;
+}
+
+/* Flexbox for larger screens */
+@media (min-width: 768px) {
+    .list-steps {
+        display: block; /* Change from flex to block for vertical */
+    }
+    .list-steps__item {
+        flex-basis: 100%; /* Full width for each step */
+        margin-bottom: 25px;
+    }
+    .list-steps__item:first-child .list-steps__item-counter::before {
+        font-size: 30px;
+    }
+    .list-steps__item:last-child .list-steps__item-counter::before {
+        font-size: 60px;
+    }
+    .list-steps__item-counter {
+        line-height: 60px;
+    }
+    .list-steps__item-counter::before {
+        font-size: 45px;
+    }
+    .list-steps__item + .list-steps__item {
+        margin-top: 0;
+    }
+}
+
+/* Further responsive changes */
+@media (min-width: 768px) and (max-width: 991px) {
+    .list-steps p {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 992px) {
+    * + .list-steps {
+        margin-top: 45px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .list-steps__item:first-child .list-steps__item-counter::before {
+        font-size: 60px;
+    }
+    .list-steps__item:last-child .list-steps__item-counter::before {
+        font-size: 100px;
+    }
+    .list-steps__item-counter {
+        line-height: 100px;
+    }
+    .list-steps__item-counter::before {
+        font-size: 81px;
+    }
+}
+
+/* For dividers */
+hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-top: 1px solid #ebebeb;
+    max-width: 100%; /* Ensure it stretches to the width of the container */
+}
+
+/* Modern Divider */
+.divider {
+    font-size: 0;
+    line-height: 0;
+}
+
+/* Divider line style */
+.divider::after {
+    content: '';
+    display: inline-block;
+    width: 60px; /* Limit the width of the divider */
+    height: 2px;
+    background-color: #0f75bc;
+    margin: 0 auto; /* Center the divider */
+}
+
+/* Modern Divider (more controlled) */
+.divider-modern {
+    height: 1px;
+    font-size: 0;
+    line-height: 0;
+    background: #ebebeb;
+}
+
+/* Adjust the size of the modern divider */
+.divider-modern::after {
+    content: '';
+    display: inline-block;
+    width: 75px; /* Adjust this width as needed */
+    height: 2px;
+    background: #0f75bc;
+    margin: 0 auto; /* Center the divider */
+}
+
+/* For dividers with padding/margin */
+* + .divider-modern {
+    margin-top: 30px;
+}
+
+.divider-modern + p {
+    margin-top: 25px;
+}
+
+/* Responsive adjustments for dividers */
+@media (min-width: 992px) {
+    * + .divider-modern {
+        margin-top: 40px;
+    }
+    .divider-modern + p {
+        margin-top: 35px;
+    }
+}
