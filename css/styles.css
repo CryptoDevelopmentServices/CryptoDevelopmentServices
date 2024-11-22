@@ -1495,30 +1495,33 @@ html .group-middle > * {
 	margin-left: 20px;
 }
 
+/* Mobile App Frame Styling */
 .mobile-app-frame {
     position: relative;
     z-index: 0;
     overflow: hidden;
-    max-width: 643px;
+    max-width: 643px;  /* Maximum width for larger screens */
     margin-left: auto;
     margin-right: auto;
-    /* Removed the 'right: -25px' and kept only 'auto' margins for proper centering */
+    /* Ensure proper centering and prevent right offsets */
 }
 
+/* Content inside the mobile app frame */
 .mobile-app-frame__content {
     position: absolute;
-    top: 62.5%; /* Centers the content vertically */
-    left: 45%; /* Centers the content horizontally */
+    top: 50%; /* Centers the content vertically */
+    left: 50%; /* Centers the content horizontally */
     transform: translate(-50%, -50%); /* Offset to exactly center the content */
     overflow: hidden;
-    width: 55%;
+    width: 90%;  /* Set width to 90% for mobile screens */
     height: 100%;
 }
 
+/* Image inside the mobile app frame */
 .mobile-app-frame__content img {
     position: absolute;
     top: 0;
-    left: 55%;
+    left: 50%;
     transform: translateX(-50%); /* Ensures horizontal centering */
     min-height: 100%;
     min-width: 100%;
@@ -1527,6 +1530,7 @@ html .group-middle > * {
     max-width: none;
 }
 
+/* Object fit support for better image control */
 @supports (object-fit: cover) {
     .mobile-app-frame__content img {
         left: 0;
@@ -1539,25 +1543,62 @@ html .group-middle > * {
     }
 }
 
-@media (min-width: 576px) {
+/* Mobile View (Small devices and portrait tablets) */
+@media (max-width: 575px) {
     .mobile-app-frame {
-        /* No need to change right here, the element should be centered */
-        margin-left: auto;
-        margin-right: auto;
+        max-width: 100%;  /* Use full width on small screens */
+        margin-left: 0;
+        margin-right: 0;  /* Remove left and right margins */
+    }
+
+    .mobile-app-frame__content {
+        width: 100%;  /* Take up full width for smaller screens */
+        height: 100%;  /* Ensure content still fills the screen */
+        top: 50%;
+    }
+
+    .mobile-app-frame__content img {
+        width: 100%;
+        height: auto;  /* Adjust image size for small screens */
     }
 }
 
+/* Tablet and Landscape Mobile View (Medium devices) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .mobile-app-frame {
+        max-width: 90%;  /* Limit the width to 90% on medium screens */
+    }
+
+    .mobile-app-frame__content {
+        width: 100%;  /* Keep full width */
+    }
+
+    .mobile-app-frame__content img {
+        width: 100%;  /* Ensure the image scales correctly */
+        height: auto;
+    }
+}
+
+/* Desktop View (Larger screens, e.g., tablets and up) */
+@media (min-width: 768px) {
+    .mobile-app-frame {
+        max-width: 643px;  /* Maximum width for larger screens */
+    }
+
+    .mobile-app-frame__content {
+        width: 55%;  /* Keep content width at 55% for larger screens */
+        height: 100%;
+    }
+
+    .mobile-app-frame__content img {
+        min-height: 100%;
+        min-width: 100%;
+    }
+}
+
+/* Large Desktop View */
 @media (min-width: 1200px) {
     .mobile-app-frame {
-        margin-left: auto; /* Ensure centering with auto margin */
-        margin-right: auto;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .mobile-app-frame {
-        margin-left: auto;
-        margin-right: auto;
-        /* No need for the negative margin or right offset, centering is better without them */
+        max-width: 643px;  /* Restrict maximum width for very large screens */
     }
 }
