@@ -31,6 +31,12 @@ body.night {
     justify-content: space-between; /* Space between the left and right sections */
     align-items: center; /* Vertically center the items */
     box-sizing: border-box; /* Ensure padding doesn't affect width */
+    transition: top 0.3s ease;  /* Add transition for smooth animation when menu opens/closes */
+}
+
+/* Add margin to the body to avoid overlap on mobile */
+body {
+    margin-top: 70px;  /* Adjust this value based on the height of your navbar */
 }
 
 /* Navbar logo or title (optional) */
@@ -77,6 +83,11 @@ body.night {
         align-items: flex-start; /* Align items to the left */
     }
 
+    /* Add margin-top for the body to prevent overlap */
+    body {
+        margin-top: 120px;  /* Adjust this value based on the height of your navbar when it's in column layout */
+    }
+
     /* Navbar list - stack items on small screens */
     .navbar ul {
         flex-direction: column; /* Stack the list items vertically */
@@ -111,7 +122,6 @@ body.night {
         font-size: 20px; /* Adjust logo size on mobile */
     }
 }
-
 
 button#mode-toggle {
     background: none;
