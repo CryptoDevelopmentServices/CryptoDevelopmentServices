@@ -1,6 +1,8 @@
 /* Table styling */
 table, th, td {
   border: 1px solid black;
+  width: 100%;  /* Ensure the table takes full width */
+  border-collapse: collapse;  /* Collapse borders for a cleaner look */
 }
 
 th {
@@ -8,7 +10,7 @@ th {
 }
 
 th, td {
-  padding: 5px;
+  padding: 8px;  /* Slightly increase padding for readability */
 }
 
 /* Day mode styles */
@@ -43,4 +45,53 @@ body.night td {
 
 body.night th, body.night td {
   background-color: #333; /* Dark background for table elements in night mode */
+}
+
+/* Mobile-friendly styling */
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+    border-spacing: 0;  /* Ensure no gaps between table cells */
+  }
+
+  th, td {
+    padding: 10px;
+    font-size: 14px;  /* Adjust font size for readability */
+  }
+
+  /* Stack table headers above their corresponding data for smaller screens */
+  th {
+    display: block;
+    text-align: left;
+    padding-left: 10px;
+    background-color: #f9f9f9;  /* Slightly different background for the header */
+  }
+
+  td {
+    display: block;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  /* Make each row a block to allow for better wrapping */
+  tr {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  /* Mobile-specific Day Mode Styles */
+  body.day th, body.day td {
+    background-color: #fff; /* Ensure light background in day mode */
+  }
+
+  /* Mobile-specific Night Mode Styles */
+  body.night th, body.night td {
+    background-color: #333; /* Ensure dark background in night mode */
+  }
 }
