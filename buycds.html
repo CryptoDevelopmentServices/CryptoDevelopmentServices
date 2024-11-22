@@ -32,6 +32,7 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="wallets.html">Wallets</a></li>
@@ -109,6 +110,12 @@
     <script src="js/darkmode_toggle.js"></script>
     <script src="js/slick-carousel.js"></script> <!-- Slick Carousel Initialization -->
     <script src="js/particles.js"></script> <!-- Particles.js Config -->
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.navbar ul');
+            menu.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
