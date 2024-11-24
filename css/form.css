@@ -1,6 +1,20 @@
- /* Card Style for Contact Form */
- .contact-card {
-    background-color: #fff;
+/* Body styles for day and night modes */
+body.day {
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.night {
+    background-color: #121212;
+    color: #e0e0e0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Card Style for Contact Form */
+.contact-card {
+    background-color: #fff; /* Default for day mode */
+    color: #333; /* Default for day mode */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 10px;
@@ -9,6 +23,13 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Adjustments for night mode */
+body.night .contact-card {
+    background-color: #333; /* Dark background for night mode */
+    color: #e0e0e0; /* Lighter text for night mode */
 }
 
 .contact-card h2 {
@@ -29,6 +50,15 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Adjustments for night mode on form fields */
+body.night .contact-form input,
+body.night .contact-form textarea {
+    background-color: #555; /* Darker input background in night mode */
+    color: #e0e0e0; /* Lighter text in night mode */
+    border-color: #777; /* Slightly lighter border in night mode */
 }
 
 .contact-form button {
@@ -39,10 +69,17 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s;
 }
 
 .contact-form button:hover {
     background-color: #45a049;
+}
+
+/* Adjustments for night mode on the submit button */
+body.night .contact-form button {
+    background-color: #4CAF50; /* Green button stays the same */
+    color: white; /* White text */
 }
 
 /* Responsive adjustments */

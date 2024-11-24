@@ -46,18 +46,25 @@
     </nav>
 
     <!-- Main Content -->
-    <section class="welcome-section">
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
         <div class="container">
-            <h1>Contact Us</h1>
-            <p>If you have any questions or would like to learn more about our services, feel free to reach out to us using the form below.</p>
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Fill out the form below, and we’ll get back to you shortly.</p>
+            <p>Alternatively you can send an email directly to <b>cryptodevelopmentservicescds@gmail.com</b>, and we’ll get back to you shortly.</p>
 
-            <!-- Contact Form in Card -->
+            <!-- Contact Form Card -->
             <div class="contact-card">
-                <h2>Get in Touch</h2>
-                <form id="contact-form" class="contact-form">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                <form action="mailto:cryptodevelopmentservicescds@gmail.com" method="post" enctype="text/plain" class="contact-form">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
                     <button type="submit">Send Message</button>
                 </form>
             </div>
@@ -95,24 +102,7 @@
           menu.classList.toggle('active');
       }
   </script>
-  <!-- EmailJS Script -->
-  <script type="text/javascript">
-    (function() {
-        emailjs.init('q19Bpd122OEgVu223'); // Replace with your EmailJS User ID
-    })();
-    
-    const form = document.getElementById('contact-form');
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        emailjs.sendForm('service_CDS', 'template_CDS', form)
-            .then(function(response) {
-                alert('Message sent successfully!');
-            }, function(error) {
-                alert('Message failed to send. Please try again later.');
-            });
-    });
-  </script>
+ 
 
 </body>
 </html>
