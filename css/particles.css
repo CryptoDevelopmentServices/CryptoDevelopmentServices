@@ -1,9 +1,34 @@
-/* particles.css */
+/* Ensure particles container is set correctly */
+.particles-js-outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure particles stay behind content like navbar */
+    
+}
+
+/* Body styles for day and night modes */
+body.day {
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.night {
+    background-color: #121212;
+    color: #e0e0e0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Particles background styling */
 #particles-js {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 0; /* Ensure particles are behind all content */
+    
 }
-
