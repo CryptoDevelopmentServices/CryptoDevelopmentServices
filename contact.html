@@ -14,12 +14,13 @@
     <meta name="twitter:title" content="Crypto Development Services">
     <meta name="twitter:description" content="Transforming Cryptocurrency for Retail with secure, fast, and decentralized solutions.">
     <meta name="twitter:image" content="path_to_image.jpg"> <!-- Add image URL here -->
-    <title>Buy CDS - Crypto Development Services</title>
+    <title>Crypto Development Services - Contact</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/particles.css">
     <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/form.css">
     
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,700%7CTitillium+Web:300,400,700,900%7CMontserrat:400,700">
     <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
@@ -27,12 +28,13 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
 </head>
 <body class="day">
 
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+      <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="wallets.html">Wallets</a></li>
@@ -44,67 +46,23 @@
     </nav>
 
     <!-- Main Content -->
-    <!-- Welcome Section -->
     <section class="welcome-section">
         <div class="container">
-            <h2>Buy CDS Here – Start Trading with Ease</h2>
-                <p>Ready to get started with CDS? We’ve made it simple for you to buy CDS directly on our platform, with a smooth and secure process designed to meet your needs. No matter your level of experience, you can easily invest in CDS and begin trading with just a few clicks.</p>
-                <p>We have made it easy to buy CDS in a way that works best for you. Whether you’re just starting out or you’ve been in the crypto world for a while, we’ve got you covered with an easy-to-use platform that’s designed to help you get the most out of your investment.</p>
-                <p><strong>What are you waiting for?</strong> Dive into the world of CDS trading today and explore all the exciting opportunities waiting for you!</p>
+            <h1>Contact Us</h1>
+            <p>If you have any questions or would like to learn more about our services, feel free to reach out to us using the form below.</p>
 
-
-        </div>
-    </section>
-
-    <!-- Particle and Carousel Section -->
-    <section class="section bg-gray-800" style="overflow: hidden; position: relative;">
-        <!-- Globe Canvas -->
-        <canvas id="globe" style="position: absolute; top: 0; left: 0;" width="200" height="720"></canvas>
-        
-        <!-- Particles Background -->
-        <div id="particles-js" class="particles-js-outer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
-        <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="1225" height="100"></canvas>
-
-        <!-- Slick Carousel Section -->
-        <div class="slick-group-slider particles-js-outer bg-gray-800">
-            <div class="carousel-parent-outer">
-                <div class="carousel-parent">
-                    <div class="slick-slider">
-                        <div class="slick-slide">
-                            <div class="slick-slide-caption">
-                              <br>
-                              <br>
-                              <br>
-                              <br>
-                              <br>
-                              <br>
-                              <br>
-                              <br>
-                              <br>
-                              <br>                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Contact Form in Card -->
+            <div class="contact-card">
+                <h2>Get in Touch</h2>
+                <form id="contact-form" class="contact-form">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
         </div>
-            
-        </div>
     </section>
-
-    <!-- Welcome Section -->
-    <section class="welcome-section">
-      <div class="container">
-        <iframe
-        src="https://swap.dodoex.io/Crypto_Development_Services?full-screen=true"
-        width="100%" 
-        height="500" 
-        frameborder="0"
-        style="border-radius: 16px; overflow: hidden; max-width: 100%;"
-        title="Crypto Development Services Swap Interface" 
-        ></iframe>
-      </div>
-  </section>
 
     <!-- Footer with Social Media Links -->
     <footer>
@@ -132,11 +90,29 @@
     <script src="js/slick-carousel.js"></script> <!-- Slick Carousel Initialization -->
     <script src="js/particles.js"></script> <!-- Particles.js Config -->
     <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.navbar ul');
-            menu.classList.toggle('active');
-        }
-    </script>
+      function toggleMenu() {
+          const menu = document.querySelector('.navbar ul');
+          menu.classList.toggle('active');
+      }
+  </script>
+  <!-- EmailJS Script -->
+  <script type="text/javascript">
+    (function() {
+        emailjs.init('q19Bpd122OEgVu223'); // Replace with your EmailJS User ID
+    })();
+    
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        emailjs.sendForm('service_CDS', 'template_CDS', form)
+            .then(function(response) {
+                alert('Message sent successfully!');
+            }, function(error) {
+                alert('Message failed to send. Please try again later.');
+            });
+    });
+  </script>
 
 </body>
 </html>
