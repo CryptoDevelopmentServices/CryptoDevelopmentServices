@@ -39,5 +39,3 @@ particlesJS('particles-js', {
         }
     }
 });
-
-
