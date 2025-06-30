@@ -15,6 +15,12 @@
     <!-- Add jQuery before the Slick Carousel JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- AOS Animate on Scroll Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    
+
 </head>
 <body class="day">
 
@@ -25,32 +31,75 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="wallets.html">Wallets</a></li>
             <li><a href="buycds.html">Buy CDS</a></li>
-            <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <button id="mode-toggle">🌙</button> <!-- Dark Mode Button -->
     </nav>
 
     <!-- About Us Section -->
-    <section class="about-us-section">
-        <div class="container">
-            <h1>About Crypto Development Services</h1>
-            <p>Crypto Development Services (CDS) is a leader in providing fast, secure, and decentralized cryptocurrency solutions for the retail industry. Our vision is to revolutionize the way transactions are made globally, offering businesses the tools they need to integrate cryptocurrency payment systems into their operations.</p>
-            
-            <h2>Our Mission</h2>
-            <p>Our mission is to simplify cryptocurrency adoption for retail businesses, providing them with seamless and secure payment solutions that enhance customer experience and reduce transaction costs. With our expertise in blockchain technology and cryptocurrency, we are committed to building a decentralized future that empowers businesses and users worldwide.</p>
+    <section class="about-us-section bg-gray-900 text-white" style="padding: 80px 20px;">
+    <div class="container" style="max-width: 960px; margin: 0 auto;">
+        <div data-aos="fade-up" style="
+        background: rgba(0, 0, 0, 0.75);
+        border-radius: 16px;
+        padding: 50px 40px;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+        backdrop-filter: blur(10px);
+        ">
+        <h1 class="aos-fade" style="font-size: 3rem; margin-bottom: 30px;">About Crypto Development Services</h1>
+        <p style="font-size: 1.2rem; line-height: 1.8;">
+            <strong>Crypto Development Services (CDS)</strong> is more than just a blockchain company — we are a force of innovation and engineering precision.
+            Founded by developers, for developers, CDS exists to empower builders, disruptors, and visionaries with the tools, technologies, and expertise 
+            to shape the decentralized future. Our DNA is written in code, fueled by purpose, and driven by the relentless pursuit of technological mastery.
+        </p>
 
-            <h2>Our Team</h2>
-            <p>Our team is made up of industry-leading experts in blockchain development, software engineering, and cybersecurity. With years of experience in the field, we are driven by the goal of creating solutions that meet the needs of the rapidly changing world of cryptocurrency and blockchain.</p>
+        <h2 class="gradient-underline">Our Mission</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+            At CDS, our mission is to eliminate barriers in the crypto development space by providing elite-grade infrastructure, consulting, and tooling.
+            We bridge the gap between idea and execution — transforming raw concepts into deployable, secure, scalable realities.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+            From wallet integrations and mining optimizations to full-stack blockchain engineering, dApp infrastructure, tokenomics, and Web3 APIs — we do it all.
+            And we do it with precision, passion, and performance. We don’t just support the blockchain ecosystem — we architect it.
+        </p>
 
-            <h2>Why Choose CDS?</h2>
-            <ul>
-                <li><strong>Fast Transactions:</strong> Speed is essential for modern businesses, and our solutions are designed for lightning-fast transactions.</li>
-                <li><strong>Security First:</strong> We prioritize the security of your transactions with robust encryption and blockchain technology.</li>
-                <li><strong>Global Reach:</strong> Our decentralized solutions can be used worldwide, allowing businesses to expand their reach globally.</li>
-                <li><strong>Seamless Integration:</strong> Our payment solutions are designed to integrate easily with existing systems, making adoption quick and painless.</li>
-            </ul>
+        <h2 class="gradient-underline">Our Philosophy</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+            We believe that true innovation happens when tools empower the creators. We’re committed to open standards, cross-chain interoperability, 
+            and practical engineering that actually scales. While others promise “decentralization,” we deliver results — with performance measured in real-world deployments.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+            We are not consultants. We are creators, coders, security architects, performance tuners, protocol writers, and blockchain pioneers. 
+            Our solutions are forged from real-world pain points and deployed into live environments powering global use cases. 
+        </p>
+
+        <h2 class="gradient-underline">Our Team</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+            Behind CDS stands a team of elite developers, cryptographers, and decentralized systems engineers. We've been in the trenches — 
+            optimizing mining algorithms, debugging consensus forks, and building from zero to mainnet. 
+            Each member brings hardcore technical proficiency combined with creative problem-solving that pushes boundaries.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+            We don't just adapt to the crypto space — we define its future.
+        </p>
+
+        <h2 class="gradient-underline">Why Choose CDS?</h2>
+        <ul style="font-size: 1.1rem; line-height: 2; padding-left: 20px;">
+            <li><strong>⚡ Developer-First Design:</strong> Our platforms are built with clean APIs, modular toolkits, and performance-focused architecture to suit actual builders.</li>
+            <li><strong>🛡 Battle-Tested Security:</strong> From hardened protocols to enterprise-grade encryption, we don’t compromise on security — ever.</li>
+            <li><strong>🌍 Truly Global:</strong> Our tools support developers across borders and industries. Decentralization is not a buzzword — it’s our blueprint.</li>
+            <li><strong>🔧 End-to-End Capability:</strong> From full-stack blockchain deployment to UI/UX, mining pools, and explorer integration — we are the one-stop crypto powerhouse.</li>
+            <li><strong>🧠 Innovation, Not Iteration:</strong> We don’t fork and rebrand — we architect from the ground up.</li>
+        </ul>
+
+        <h2 class="gradient-underline">Join the Revolution</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+            Whether you're an indie dev launching your first protocol or a growing project scaling to millions of users — CDS is your technical backbone. 
+            We provide the infrastructure, code, and strategic guidance to take your crypto journey from idea to impact. 
+            Join us and experience what it's like to work with blockchain engineers who truly speak your language.
+        </p>
         </div>
+    </div>
     </section>
 
     <!-- Particle Section -->
@@ -65,7 +114,7 @@
     <!-- Footer with Social Media Links -->
     <footer>
         <div class="footer-content">
-            <p>&copy;2021 - 2024 Crypto Development Services. All Rights Reserved.</p>
+            <p>&copy;2021 - 2025 Crypto Development Services. All Rights Reserved.</p>
             <div class="social-links">
                 <a href="https://discord.gg/vrvfhQ4FRa" target="_blank" class="social-icon discord">
                     <i class="fab fa-discord"></i>
@@ -92,6 +141,11 @@
             const menu = document.querySelector('.navbar ul');
             menu.classList.toggle('active');
         }
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        AOS.init({ once: true, duration: 1000 });
+    });
     </script>
 
 </body>

@@ -34,11 +34,10 @@
     <nav class="navbar">
       <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
         <ul>
-            <li><a href="index.html">Home</a></li>
             <li><a href="wallets.html">Wallets</a></li>
             <li><a href="buycds.html">Buy CDS</a></li>
-            <!-- <li><a href="about.html">About</a></li>
-            <li><a href="contact">Contact</a></li> -->
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact">Contact</a></li>
         </ul>
         <button id="mode-toggle" aria-label="Toggle Dark Mode">🌙</button> <!-- Dark Mode Button -->
     </nav>
@@ -56,51 +55,70 @@
         </div>
     </section>
 
-    <!-- Particle and Carousel Section -->
-    <section class="section bg-gray-800" style="overflow: hidden; position: relative;">
-        <!-- Globe Canvas -->
-        <canvas id="globe" style="position: absolute; top: 0; left: 0;" width="200" height="720"></canvas>
-        
-        <!-- Particles Background -->
-        <div id="particles-js" class="particles-js-outer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
-        <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="1225" height="100"></canvas>
+    <!-- cds Carousel Section (Enhanced, No Particles) -->
+    <section class="section bg-gray-800" style="padding: 80px 20px;">
+    <div class="slick-group-slider bg-gray-800">
+        <div class="carousel-parent-outer">
+        <div class="carousel-parent">
+            <div class="slick-slider">
 
-        <!-- Slick Carousel Section -->
-        <div class="slick-group-slider particles-js-outer bg-gray-800">
-            <div class="carousel-parent-outer">
-                <div class="carousel-parent">
-                    <div class="slick-slider">
-                        <div class="slick-slide">
-                            <div class="slick-slide-caption">
-                                <h3>Your #1 retail currency</h6>
-                                <h1>Crypto Currency</h1>
-                                <h3 class="decoration-heading-1">That will Change the World</h3>
-                                <p><strong>Crypto Development Services</strong> is starting to completely change the way transactions are made in retail. CDS offers fast and reliable merchant payment solutions.</p>
-                                <div class="slick-slide-caption__footer"><a class="button button-color-1" href="about.html">Read More</a></div>
-                            </div>
-                        </div>
-                        <div class="slick-slide">
-                            <div class="slick-slide-caption">
-                                <h3>The perfect retail payment solution</h6>
-                                <h1>Super Fast</h1>
-                                <h3 class="decoration-heading-1">Worldwide Transactions</h3>
-                                <p>A lightning fast cryptocurrency with worldwide retail acceptance. Crypto Development Services is faster than Bitcoin and litecoin.</p>
-                                <div class="slick-slide-caption__footer"><a class="button button-color-1" href="about.html">Read More</a></div>
-                            </div>
-                        </div>
-                        <div class="slick-slide">
-                            <div class="slick-slide-caption">
-                                <h3>Worldwide Usage</h6>
-                                <h1>Decentralized</h1>
-                                <h3 class="decoration-heading-1">Blockchain Technology</h3>
-                                <p>Crypto Development Services offers its users a decentralized, anonymous, and secure worldwide network easily accessible using a wide array of wallets on multiple operating systems.</p>
-                                <div class="slick-slide-caption__footer"><a class="button button-color-1" href="about.html">Read More</a></div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Slide 1: CDS Introduction -->
+            <div class="slick-slide">
+                <div class="slick-slide-caption" style="display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap; padding: 60px 20px; min-height: 400px;">
+                <div style="flex: 0 0 240px; text-align: center; z-index: 2;">
+                    <a href="https://discord.com/invite/DjErSezN9r" target="_blank" rel="noopener noreferrer">
+                    <img src="images/partners/cds.png" alt="CDS Logo" style="max-width: 100%; height: 180px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: transform 0.3s;">
+                    </a>
+                </div>
+                <div style="flex: 1; color: white; max-width: 700px;">
+                    <h2 style="font-size: 2.5rem;">Crypto Development Services</h2>
+                    <p style="font-size: 1.2rem;">A developer-first blockchain solutions provider offering end-to-end tools, wallet support, and mining integrations to accelerate your crypto project’s success.</p>
+                    <div class="slick-slide-caption__footer"><a class="button button-color-1" href="about.html">Read More</a></div>
+                </div>
                 </div>
             </div>
+
+            <!-- Slide 2: CDS Worldwide Transactions -->
+            <div class="slick-slide">
+                <div class="slick-slide-caption" style="display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap; padding: 60px 20px; min-height: 400px;">
+                <div style="flex: 0 0 240px; text-align: center; z-index: 2;">
+                    <a href="https://discord.com/invite/DjErSezN9r" target="_blank" rel="noopener noreferrer">
+                    <img src="images/partners/cds.png" alt="CDS Logo" style="max-width: 100%; height: 180px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: transform 0.3s;">
+                    </a>
+                </div>
+                <div style="flex: 1; color: white; max-width: 700px;">
+                    <h2 style="font-size: 2.5rem;">Worldwide Transactions</h2>
+                    <p style="font-size: 1.2rem;">A lightning fast cryptocurrency with global acceptance. Crypto Development Services outpaces legacy coins like Bitcoin and Litecoin with real-world usability.</p>
+                    <div class="slick-slide-caption__footer"><a class="button button-color-1" href="about.html">Read More</a></div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: CDS Full Mission Statement -->
+            <div class="slick-slide">
+                <div class="slick-slide-caption" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 40px; color: white; text-align: center; min-height: 500px;">
+                <div style="max-width: 900px;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Built By Developers, For Developers</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Crypto Development Services is a developer-driven blockchain solutions provider — built by developers, for developers.
+                    We understand the unique challenges that builders face in the rapidly evolving crypto space because we’ve faced them ourselves.
+                    Our mission is to bridge the gap between concept and deployment by delivering robust, flexible, and efficient development tools, infrastructure, and consulting services tailored to your project’s needs.
+                    <br><br>
+                    With deep expertise across a wide range of blockchain technologies — from full-stack cryptocurrency creation, wallet integration, and mining optimization to decentralized application (dApp) development and Web3 API design —
+                    we empower individuals and teams to bring their vision to life faster, more securely, and with greater confidence.
+                    <br><br>
+                    At CDS, we don’t just build for the ecosystem — we build with it. We’re committed to open standards, interoperability, and practical innovation,
+                    ensuring our solutions scale with your growth. Whether you’re a solo developer launching your first token or an enterprise expanding into decentralized tech,
+                    Crypto Development Services is your technical backbone — delivering real-world results with developer-first precision.
+                    </p>
+                </div>
+                </div>
+            </div>
+
+            </div>
         </div>
+        </div>
+    </div>
     </section>
 
     <!-- Welcome Section -->
@@ -110,12 +128,108 @@
           <p>Curious about which wallets support CDS? Click here to find out and get started!</p>
           <a href="wallets.html" class="button button-primary">Learn More</a> <!-- Call to Action Button -->
       </div>
-  </section>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="welcome-section">
+      <div class="container">
+          <h1>Discover the Best Partners CDS has</h1>
+          <p>Curious about how CDS gets around and helps in the crypto sphere</p>
+      </div>
+    </section>
+
+    <!-- Partner Carousel Section (Enhanced, No Particles) -->
+    <section class="section bg-gray-800" style="padding: 80px 20px;">
+    <div class="slick-group-slider bg-gray-800">
+        <div class="carousel-parent-outer">
+        <div class="carousel-parent">
+            <div class="slick-slider">
+
+            <!-- Slide 1: Adventurecoin -->
+            <div class="slick-slide">
+                <div class="slick-slide-caption" style="display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap; padding: 60px 20px; min-height: 400px;">
+                <div style="flex: 0 0 240px; text-align: center; z-index: 2;">
+                    <a href="https://discord.gg/umwwX6QEmM" target="_blank" rel="noopener noreferrer">
+                    <img src="images/partners/advc.png" alt="Adventurecoin Logo" style="max-width: 100%; height: 180px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: transform 0.3s;">
+                    </a>
+                </div>
+                <div style="flex: 1; color: white; max-width: 700px;">
+                    <h2 style="font-size: 2.5rem;">Adventurecoin</h2>
+                    <p style="font-size: 1.2rem;">A Layer 1 blockchain built as a highly modified fork of YenTen, utilizing a Proof-of-Work (PoW) consensus mechanism. A blazing fast cryptocurrency built for real-world utility across games, and tools.</p>
+                </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: ShibaCoin -->
+            <div class="slick-slide">
+                <div class="slick-slide-caption" style="display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap; padding: 60px 20px; min-height: 400px;">
+                <div style="flex: 0 0 240px; text-align: center; z-index: 2;">
+                    <a href="https://discord.gg/ntm7sp24EW" target="_blank" rel="noopener noreferrer">
+                    <img src="images/partners/shic.png" alt="ShibaCoin Logo" style="max-width: 100%; height: 180px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: transform 0.3s;">
+                    </a>
+                </div>
+                <div style="flex: 1; color: white; max-width: 700px;">
+                    <h2 style="font-size: 2.5rem;">ShibaCoin</h2>
+                    <p style="font-size: 1.2rem;">A Layer 1 blockchain forked from Dogecoin using PoW. It’s fully independent, secure, and fast for apps and transactions.</p>
+                </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: BlockSpot -->
+            <div class="slick-slide">
+                <div class="slick-slide-caption" style="display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap; padding: 60px 20px; min-height: 400px;">
+                <div style="flex: 0 0 240px; text-align: center; z-index: 2;">
+                    <a href="https://blockspot.io/coin/crypto-development-services-2/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/partners/blockspot.png" alt="BlockSpot Logo" style="max-width: 100%; height: 180px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: transform 0.3s;">
+                    </a>
+                </div>
+                <div style="flex: 1; color: white; max-width: 700px;">
+                    <h2 style="font-size: 2.5rem;">BlockSpot.io</h2>
+                    <p style="font-size: 1.2rem;">Blockspot.io lists 30K+ coins, 1500+ exchanges, 150+ wallets, 100+ countries, and a crypto dictionary with 200+ terms and articles.</p>
+                </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: CoinPaprika -->
+            <div class="slick-slide">
+                <div class="slick-slide-caption" style="display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap; padding: 60px 20px; min-height: 400px;">
+                <div style="flex: 0 0 240px; text-align: center; z-index: 2;">
+                    <a href="https://coinpaprika.com/coin/cds-crypto-development-services-new/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/partners/coinpaprika.png" alt="CoinPaprika Logo" style="max-width: 100%; height: 180px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: transform 0.3s;">
+                    </a>
+                </div>
+                <div style="flex: 1; color: white; max-width: 700px;">
+                    <h2 style="font-size: 2.5rem;">CoinPaprika</h2>
+                    <p style="font-size: 1.2rem;">CoinPaprika is a market research platform providing data from over 25,000 cryptocurrency markets. Trusted by investors and developers worldwide.</p>
+                </div>
+                </div>
+            </div>
+
+             <!-- Slide 5: NestEx -->
+            <div class="slick-slide">
+                <div class="slick-slide-caption" style="display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap; padding: 60px 20px; min-height: 400px;">
+                <div style="flex: 0 0 240px; text-align: center; z-index: 2;">
+                    <a href="https://nestex.one/?ref=CryptoLover705" target="_blank" rel="noopener noreferrer">
+                    <img src="images/partners/nestex.png" alt="NestEx Logo" style="max-width: 100%; height: 180px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: transform 0.3s;">
+                    </a>
+                </div>
+                <div style="flex: 1; color: white; max-width: 700px;">
+                    <h2 style="font-size: 2.5rem;">NestEx</h2>
+                    <p style="font-size: 1.2rem;">NestEx offers security, privacy, ease of use and peace of mind. nestex is the smoothest lightest easiest exchange to use.</p>
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
 
     <!-- Footer with Social Media Links -->
     <footer>
         <div class="footer-content">
-            <p>&copy;2021 - 2024 Crypto Development Services. All Rights Reserved.</p>
+            <p>&copy;2021 - 2025 Crypto Development Services. All Rights Reserved.</p>
             <div class="social-links">
                 <a href="https://discord.gg/vrvfhQ4FRa" target="_blank" class="social-icon discord">
                     <i class="fab fa-discord"></i>
