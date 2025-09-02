@@ -55,6 +55,57 @@
         </div>
     </section>
 
+   <!-- CDS Stats Section -->
+    <section class="stats-section" style="padding: 60px 0; background-color: #111; color: #fff;">
+        <div class="container">
+            <h2 style="text-align:center; margin-bottom: 40px;">CDS Token Stats</h2>
+            <div class="stats-cards" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+            
+            <!-- Contract -->
+            <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
+                <h3>Contract Address</h3>
+                <p>
+                <a href="https://polygonscan.com/token/0xF7B5991c676929BF98BF3E2e2e386789BB16912a" 
+                    target="_blank" style="color: #00bfff; word-break: break-all;">
+                    0xF7B5991c676929BF98BF3E2e2e386789BB16912a
+                </a>
+                </p>
+            </div>
+
+            <!-- Max Supply -->
+            <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
+                <h3>Max Supply</h3>
+                <p>21,000,000 CDS</p>
+            </div>
+
+            <!-- Total Supply -->
+            <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
+                <h3>Total Minted Supply</h3>
+                <p id="cds-total">Loading...</p>
+            </div>
+
+            <!-- Circulating Supply -->
+            <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
+                <h3>Circulating Supply</h3>
+                <p id="cds-circulating">Loading...</p>
+            </div>
+
+            <!-- Price -->
+            <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
+                <h3>Price (USDT)</h3>
+                <p id="cds-price">Loading...</p>
+            </div>
+
+            <!-- Market Cap -->
+            <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
+                <h3>Market Cap</h3>
+                <p id="cds-marketcap">Loading...</p>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- cds Carousel Section (Enhanced, No Particles) -->
     <section class="section bg-gray-800" style="padding: 80px 20px;">
     <div class="slick-group-slider bg-gray-800">
@@ -304,7 +355,117 @@
           const menu = document.querySelector('.navbar ul');
           menu.classList.toggle('active');
       }
-  </script>
+    </script>
+    <!-- CDS Stats Section -->
+<section class="stats-section" style="padding: 60px 0; background-color: #111; color: #fff;">
+  <div class="container">
+    <h2 style="text-align:center; margin-bottom: 40px;">CDS Token Stats</h2>
+    <div class="stats-cards" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+      
+      <!-- Contract -->
+      <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
+        <h3>Contract Address</h3>
+        <p>
+          <a href="https://polygonscan.com/token/0xF7B5991c676929BF98BF3E2e2e386789BB16912a" 
+             target="_blank" style="color: #00bfff; word-break: break-all;">
+            0xF7B5991c676929BF98BF3E2e2e386789BB16912a
+          </a>
+        </p>
+      </div>
 
+      <!-- Max Supply -->
+      <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
+        <h3>Max Supply</h3>
+        <p>21,000,000 CDS</p>
+      </div>
+
+      <!-- Total Supply -->
+      <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
+        <h3>Total Minted Supply</h3>
+        <p id="cds-total">Loading...</p>
+      </div>
+
+      <!-- Circulating Supply -->
+      <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
+        <h3>Circulating Supply</h3>
+        <p id="cds-circulating">Loading...</p>
+      </div>
+
+      <!-- Price -->
+      <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
+        <h3>Price (USDT)</h3>
+        <p id="cds-price">Loading...</p>
+      </div>
+
+      <!-- Market Cap -->
+      <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
+        <h3>Market Cap</h3>
+        <p id="cds-marketcap">Loading...</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <script>
+        async function fetchCDSStats() {
+            try {
+            const apiKey = 'QSI7RVD94CMERHWP7JNUQQUEXFJVF3K2CM';
+            const chainId = 137; // Polygon chain ID
+            const contract = '0xF7B5991c676929BF98BF3E2e2e386789BB16912a';
+            const deployer = '0xc0B254f1e80517Ea4D298a88AB9371dEec62792C';
+            const decimals = 8;
+
+            // 1) Get total minted supply
+            const supplyRes = await fetch(`https://api.etherscan.io/v2/api?chainid=${chainId}&module=stats&action=tokensupply&contractaddress=${contract}&apikey=${apiKey}`);
+            const supplyData = await supplyRes.json();
+
+            // 2) Get deployer balance
+            const balanceRes = await fetch(`https://api.etherscan.io/v2/api?chainid=${chainId}&module=account&action=tokenbalance&contractaddress=${contract}&address=${deployer}&tag=latest&apikey=${apiKey}`);
+            const balanceData = await balanceRes.json();
+
+            if (supplyData.status === "1" && balanceData.status === "1") {
+                const totalSupply = parseFloat(supplyData.result) / (10 ** decimals);
+                const deployerBalance = parseFloat(balanceData.result) / (10 ** decimals);
+
+                // Circulating = total minted – deployer balance
+                const circulating = totalSupply - deployerBalance;
+
+                document.getElementById('cds-total').innerText =
+                totalSupply.toLocaleString(undefined, {maximumFractionDigits: 3}) + ' CDS';
+                document.getElementById('cds-circulating').innerText =
+                circulating.toLocaleString(undefined, {maximumFractionDigits: 3}) + ' CDS';
+
+                // 3) Fetch price from NestEx
+                const priceRes = await fetch(`https://trade.nestex.one/api/cg/tickers/CDS_USDT`);
+                const priceData = await priceRes.json();
+
+                if (priceData.last_price) {
+                const price = parseFloat(priceData.last_price);
+                const marketCap = circulating * price;
+
+                document.getElementById('cds-price').innerText =
+                    '$' + price.toFixed(6);
+                document.getElementById('cds-marketcap').innerText =
+                    '$' + marketCap.toLocaleString(undefined, {maximumFractionDigits: 2});
+                } else {
+                document.getElementById('cds-price').innerText = 'Error';
+                document.getElementById('cds-marketcap').innerText = 'Error';
+                }
+            } else {
+                document.getElementById('cds-total').innerText = 'Error';
+                document.getElementById('cds-circulating').innerText = 'Error';
+            }
+            } catch (err) {
+            console.error(err);
+            document.getElementById('cds-total').innerText = 'Error';
+            document.getElementById('cds-circulating').innerText = 'Error';
+            document.getElementById('cds-price').innerText = 'Error';
+            document.getElementById('cds-marketcap').innerText = 'Error';
+            }
+        }
+
+        fetchCDSStats();
+    </script>
 </body>
 </html>
