@@ -349,6 +349,10 @@ footer p {
     color: #181717; /* GitHub Black */
 }
 
+.social-icon.bitcoin {
+    color: #daa70f; /* Bitcoin yellow */
+}
+
 /* Hover effects for social icons */
 .social-icon:hover {
     opacity: 0.8; /* Slight fade effect on hover */
