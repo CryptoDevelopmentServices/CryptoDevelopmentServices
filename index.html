@@ -356,56 +356,6 @@
           menu.classList.toggle('active');
       }
     </script>
-    <!-- CDS Stats Section -->
-<section class="stats-section" style="padding: 60px 0; background-color: #111; color: #fff;">
-  <div class="container">
-    <h2 style="text-align:center; margin-bottom: 40px;">CDS Token Stats</h2>
-    <div class="stats-cards" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-      
-      <!-- Contract -->
-      <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
-        <h3>Contract Address</h3>
-        <p>
-          <a href="https://polygonscan.com/token/0xF7B5991c676929BF98BF3E2e2e386789BB16912a" 
-             target="_blank" style="color: #00bfff; word-break: break-all;">
-            0xF7B5991c676929BF98BF3E2e2e386789BB16912a
-          </a>
-        </p>
-      </div>
-
-      <!-- Max Supply -->
-      <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
-        <h3>Max Supply</h3>
-        <p>21,000,000 CDS</p>
-      </div>
-
-      <!-- Total Supply -->
-      <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
-        <h3>Total Minted Supply</h3>
-        <p id="cds-total">Loading...</p>
-      </div>
-
-      <!-- Circulating Supply -->
-      <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
-        <h3>Circulating Supply</h3>
-        <p id="cds-circulating">Loading...</p>
-      </div>
-
-      <!-- Price -->
-      <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
-        <h3>Price (USDT)</h3>
-        <p id="cds-price">Loading...</p>
-      </div>
-
-      <!-- Market Cap -->
-      <div class="stat-card" style="flex: 1; min-width: 250px; padding: 20px; background: #222; border-radius: 12px; text-align: center;">
-        <h3>Market Cap</h3>
-        <p id="cds-marketcap">Loading...</p>
-      </div>
-
-    </div>
-  </div>
-</section>
 
     <script>
         async function fetchCDSStats() {
